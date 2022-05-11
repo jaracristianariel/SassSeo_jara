@@ -1,0 +1,48 @@
+html {
+    height: 100%;
+  }
+  
+.grid {
+    display: -ms-grid;
+    display: grid;
+    gap: 5px;
+    grid-template-areas: 
+    "encabezado"
+    "navegador"
+    "contenido"
+    "pie";
+    .encabezado {
+    grid-area: encabezado;
+    background-color: black};
+    .navegador {
+    grid-area: navegador};
+    .contenido {
+    grid-area: contenido;
+    display: flex};
+    .pie {
+    grid-area: pie;
+    background-color: black};
+}
+  
+@media (min-width: 576px) {
+    .grid {    
+      grid-template-columns: 80px auto 80px;
+      grid-auto-rows: 80px 40px auto 90px;
+      grid-template-areas: 
+      "encabezado encabezado encabezado"
+      "navegador navegador navegador"    
+      ". contenido ."    
+      "pie pie pie";        
+    }
+}
+@media (max-width: 575px) {
+    .grid {
+      grid-template-columns: 80px auto 80px;
+      grid-auto-rows: 80px 40px auto 80px;
+      grid-template-areas:
+      "encabezado encabezado encabezado"
+      "navegador navegador navegador"
+      "contenido contenido conenido"
+      "pie pie pie";
+    }
+}
